@@ -1,5 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CatsController } from './cats/cats.controller';
+import { CatsService } from './cats/cats.service';
+import { CatsModule } from './cats/cats.module';
 
 @Module({
   imports: [
@@ -12,7 +15,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       database: 'test',
       autoLoadEntities: true,
       synchronize: true,
-    })
+    }),
+    CatsModule
   ],
 })
 export class AppModule {}
