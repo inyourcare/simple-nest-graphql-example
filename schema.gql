@@ -1,0 +1,21 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type NewCatOutput {
+  name: String!
+  age: Float!
+}
+
+type Query {
+  hello: String!
+}
+
+type Mutation {
+  addCat(newCatData: NewCatInput!): NewCatOutput!
+}
+
+input NewCatInput {
+  name: String!
+  age: Float!
+}

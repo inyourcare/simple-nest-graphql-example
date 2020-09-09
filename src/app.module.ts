@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { CatsController } from './cats/cats.controller';
-import { CatsService } from './cats/cats.service';
 import { CatsModule } from './cats/cats.module';
+import { GraphQLModule } from '@nestjs/graphql';
 
 @Module({
   imports: [
@@ -16,7 +15,10 @@ import { CatsModule } from './cats/cats.module';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    CatsModule
+    CatsModule,
+    GraphQLModule.forRoot({
+      autoSchemaFile: 'schema.gql'
+    }),
   ],
 })
 export class AppModule {}
